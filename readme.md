@@ -3,7 +3,7 @@
 #### create hbase container :
 
 ##### try 
-docker run -p 16010:16010 -p 8085:8085 -p 9095:9095 -d --name hbase-docker -v ${PWD}:/data dajobe/hbase
+cmd: ` docker run -p 16010:16010 -p 8085:8085 -p 9095:9095 -d --name hbase-docker -v ${PWD}:/data dajobe/hbase `
 ##### or
 cmd: ` docker run -p 2181:2181  -p 60000:60000  -p 60010:60010  -p 60020:60020  -p 60030:60030  -p 8080:8080  -p 8085:8085  -p 9090:9090  -p 9095:9095  --name=hbase-docker -h hbase-docker -d -v $PWD/data:/data dajobe/hbase`
 

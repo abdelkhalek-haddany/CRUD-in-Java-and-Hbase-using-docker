@@ -1,6 +1,7 @@
 #### package the project into a jar : `mvn clean compile assembly:single`
 
 #### create hbase container :
+
 ##### try 
 docker run -p 16010:16010 -p 8085:8085 -p 9095:9095 -d --name hbase-docker -v ${PWD}:/data dajobe/hbase
 ##### or
@@ -19,29 +20,29 @@ http://localhost:8085/rest.jsp
 #### testing hbase inside the container:
   run hbase shell : `docker exec -it hbase-docker /opt/hbase/bin/hbase shell`
 
-  create a table: `create 'commande' , 'clients', 'produits'`
+  create a table: `create 'student' , 'personal', 'academic'`
 
   insert some data for testing into the hbase after logging
   
 -- row1
 
-  `put 'commande', 'row1', 'clients:First_Name', 'oumaima'`
+  `put 'student', 'row1', 'personal:firstname', 'oumaima'`
 
-  `put 'commande', 'row1', 'clients:Second_Name', 'AB'`
+  `put 'student', 'row1', 'personal:lastname', 'AB'`
 
-  `put 'commande', 'row1', 'produits:Fileire', 'IAAdD'`
+  `put 'student', 'row1', 'academic:field', 'IAAD'`
 
-  `put 'commande', 'row1', 'produits:Annee_Bac', '2018'`
+  `put 'student', 'row1', 'academic:level', 'Bac+5'`
 
 -- row2
 
-  `put 'commande', 'row2', 'clients:First_Name', 'Anas'`
+  `put 'student', 'row2', 'personal:firstname', 'Abdelkhalek'`
 
-  `put 'commande', 'row2', 'clients:Second_Name', 'ABA`'
+  `put 'student', 'row2', 'personal:lastname', 'Haddany'`'
 
-  `put 'commande', 'row2', 'produits:Fileire', 'GLSID'`
+  `put 'student', 'row2', 'academic:field', 'IAAD'`
 
-  `put 'commande', 'row2', 'produits:Annee_Bac', '2013'`
+  `put 'student', 'row2', 'academic:level', 'Bac+5'`
 
 #### insert data with this project into hbase 
 - step 1: build the project jar: `mvn clean compile assembly:single` 
